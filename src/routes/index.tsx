@@ -138,11 +138,11 @@ export default component$(() => {
         </ul>
       </section>
       <section id="control-sect">
-        <div>
-          <h3>Mode</h3>
+        <h3>Mode</h3>
+        <div class="option-div">
           <ul class="container radio-div">
             {modes.map((m) => (
-              <div key={m.id} class="radio-div">
+              <li key={m.id} class="radio-div">
                 <input
                   type="radio"
                   id={m.id}
@@ -152,15 +152,15 @@ export default component$(() => {
                   onChange$={handleRadio}
                 />
                 <label for={m.id}>{m.text}</label>
-              </div>
+              </li>
             ))}
           </ul>
         </div>
-        <div>
-          <h3>Resolution</h3>
+        <h3>Resolution</h3>
+        <div class="option-div">
           <ul class="container radio-div">
             {resModes.map((m) => (
-              <div key={m.id}>
+              <li key={m.id}>
                 <input
                   type="radio"
                   id={m.id}
@@ -170,37 +170,43 @@ export default component$(() => {
                   onChange$={handleSize}
                 />
                 <label for={m.id}>{m.text}</label>
-              </div>
+              </li>
             ))}
           </ul>
           <p>
             Original resolution is not recommended if dimentions are too big
           </p>
         </div>
-        <input
-          class="none"
-          type="file"
-          id="img"
-          accept="image/*"
-          onChange$={handleUpload}
-        />
-        <button id="input-btn">
-          <label for="img">Select a image</label>
-        </button>
+        <div class="option-div">
+          <ul>
+            <input
+              class="none"
+              type="file"
+              id="img"
+              accept="image/*"
+              onChange$={handleUpload}
+            />
+            <button id="input-btn">
+              <label for="img">Select a image</label>
+            </button>
 
-        <button class={!loaded.value && "none"} id="start-btn">
-          Start
-        </button>
+            <button class={!loaded.value && "none"} id="start-btn">
+              Start
+            </button>
+          </ul>
+        </div>
       </section>
-      <div>
-        <img id="sample" src="/sample.png" alt="sample-image" />
+      <section id="image-sect">
+        <div>
+          <img id="sample" src="/sample.png" alt="sample-image" />
 
-        <h2 class={!finished.value && "none"}>
-          <a href="#" download="output.png" id="download-sample">
-            Download
-          </a>
-        </h2>
-      </div>
+          <h2 class={!finished.value && "none"}>
+            <a href="#" download="output.png" id="download-sample">
+              Download
+            </a>
+          </h2>
+        </div>
+      </section>
     </>
   );
 });

@@ -1,17 +1,9 @@
-ul {
-  font-family: monospace;
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-}
-
 .colordiv {
   padding: 1rem;
   position: relative;
 }
 
 .colordiv::after {
-  font-family: sans-serif;
   content: "X";
   position: absolute;
   top: 0;
@@ -41,37 +33,35 @@ ul {
 .none {
   display: none;
 }
-
-body {
-  padding: 0;
-  margin: 0;
+section {
+  padding: 1rem;
 }
-div {
+#image-sect {
   text-align: center;
+  padding: 0;
 }
 
-img {
-  inline-size: 95%;
-  block-size: 95%;
-  display: inline-block;
-}
 .radio-div input[type="radio"],
 .radio-div input[type="checkbox"] {
   display: none;
 }
 
-.radio-div label {
+.radio-div label,
+button {
   display: block;
   transition: all 0.5s;
   padding: 1rem;
   color: black;
 }
 .radio-div input[type="radio"]:checked + label,
-.radio-div input[type="checkbox"]:checked + label {
+.radio-div input[type="checkbox"]:checked + label,
+button:hover {
   background-color: blue;
+  color: white;
 }
 
 .radio-div input[type="radio"]:not(:checked) + label,
-.radio-div input[type="checkbox"]:not(:checked) + label {
+.radio-div input[type="checkbox"]:not(:checked) + label,
+button {
   background-color: aliceblue;
 }
