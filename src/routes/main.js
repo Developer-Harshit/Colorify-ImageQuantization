@@ -41,7 +41,7 @@ class Manipulator {
       w,
       h,
     };
-
+    // one means optimized mode
     if (pixCount > 4000000 && this.store.resmode.value == 1) {
       const fac = 8000000 / pixCount;
       result.w *= fac / 2;

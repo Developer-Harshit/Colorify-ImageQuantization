@@ -1,10 +1,9 @@
-import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import Styles from "./styles.css?inline";
+import { component$ } from "@builder.io/qwik";
+
 export default component$(() => {
-  useStylesScoped$(Styles);
   return (
     <header>
-      <div>Colorify</div>
+      <p class="logo">Colorify</p>
     </header>
   );
 });

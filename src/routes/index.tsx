@@ -24,12 +24,12 @@ export default component$(() => {
 
   const modes = [
     { val: 2, id: "bw", text: "Black & White" },
-    { val: 1, id: "lumi", text: "By Luminance" },
+    { val: 1, id: "lumi", text: "Luminance" },
     { val: 0, id: "near", text: "Nearest Color" },
   ];
   const resModes = [
-    { val: 1, id: "original", text: "Original" },
-    { val: 0, id: "optimized", text: "Optimized" },
+    { val: 0, id: "original", text: "Original" },
+    { val: 1, id: "optimized", text: "Optimized" },
   ];
   const loaded = useSignal(false);
   const loop = useSignal(false);
@@ -139,72 +139,70 @@ export default component$(() => {
       </section>
       <section id="control-sect">
         <h3>Mode</h3>
-        <div class="option-div">
-          <ul class="container radio-div">
-            {modes.map((m) => (
-              <li key={m.id} class="radio-div">
-                <input
-                  type="radio"
-                  id={m.id}
-                  name="rmode"
-                  checked
-                  value={m.val}
-                  onChange$={handleRadio}
-                />
-                <label for={m.id}>{m.text}</label>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <h3>Resolution</h3>
-        <div class="option-div">
-          <ul class="container radio-div">
-            {resModes.map((m) => (
-              <li key={m.id}>
-                <input
-                  type="radio"
-                  id={m.id}
-                  name="resmode"
-                  checked
-                  value={m.val}
-                  onChange$={handleSize}
-                />
-                <label for={m.id}>{m.text}</label>
-              </li>
-            ))}
-          </ul>
-          <p>
-            Original resolution is not recommended if dimentions are too big
-          </p>
-        </div>
-        <div class="option-div">
-          <ul>
-            <input
-              class="none"
-              type="file"
-              id="img"
-              accept="image/*"
-              onChange$={handleUpload}
-            />
-            <button id="input-btn">
-              <label for="img">Select a image</label>
-            </button>
 
-            <button class={!loaded.value && "none"} id="start-btn">
-              Start
-            </button>
-          </ul>
-        </div>
+        <ul class="container radio-div">
+          {modes.map((m) => (
+            <li key={m.id} class="radio-div">
+              <input
+                type="radio"
+                id={m.id}
+                name="rmode"
+                checked
+                value={m.val}
+                onChange$={handleRadio}
+              />
+              <label for={m.id}>{m.text}</label>
+            </li>
+          ))}
+        </ul>
+
+        <h3>Resolution</h3>
+
+        <ul class="container radio-div">
+          {resModes.map((m) => (
+            <li key={m.id}>
+              <input
+                type="radio"
+                id={m.id}
+                name="resmode"
+                checked
+                value={m.val}
+                onChange$={handleSize}
+              />
+              <label for={m.id}>{m.text}</label>
+            </li>
+          ))}
+        </ul>
+        <p>
+          Original resolution might give distorted output if the device has slow
+          processor
+        </p>
+
+        <ul>
+          <input
+            class="none"
+            type="file"
+            id="img"
+            accept="image/*"
+            onChange$={handleUpload}
+          />
+          <button id="input-btn">
+            <label for="img">Select a image</label>
+          </button>
+
+          <button class={!loaded.value && "none"} id="start-btn">
+            Start
+          </button>
+        </ul>
       </section>
       <section id="image-sect">
         <div>
-          <img id="sample" src="/sample.png" alt="sample-image" />
-
           <h2 class={!finished.value && "none"}>
             <a href="#" download="output.png" id="download-sample">
               Download
             </a>
           </h2>
+          <img id="sample" src="/sample.png" alt="sample-image" />
         </div>
       </section>
     </>

@@ -1,6 +1,13 @@
+:root {
+  --radius: 4px;
+}
+
 .colordiv {
-  padding: 1rem;
+  padding: var(--max-padding);
   position: relative;
+
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
 .colordiv::after {
@@ -21,9 +28,21 @@
   flex-wrap: wrap;
 }
 #colorlabel {
-  background-color: #f1f1f1;
-  color: black;
-  padding: 0 2rem;
+  border-radius: var(--radius);
+
+  background-color: #ffffff;
+  color: rgb(32, 3, 45);
+  font-weight: 900;
+
+  padding: 0 var(--max-padding);
+  transition-property: transform, box-shadow;
+  transition-duration: 0.5s;
+  box-shadow: 0 0 10px white;
+  transform: scale(1.001);
+}
+#colorlabel:hover,
+#colorlabel:active {
+  transform: scale(1.2);
 }
 
 #colorlabel:after {
@@ -33,16 +52,13 @@
 .none {
   display: none;
 }
-section {
-  padding: 1rem;
-}
+
 #image-sect {
   text-align: center;
   padding: 0;
 }
 
-.radio-div input[type="radio"],
-.radio-div input[type="checkbox"] {
+.radio-div input[type="radio"] {
   display: none;
 }
 
@@ -50,18 +66,24 @@ section {
 button {
   display: block;
   transition: all 0.5s;
-  padding: 1rem;
-  color: black;
-}
-.radio-div input[type="radio"]:checked + label,
-.radio-div input[type="checkbox"]:checked + label,
-button:hover {
-  background-color: blue;
+  padding: var(--max-padding);
   color: white;
+  border-radius: var(--radius);
+}
+.radio-div input[type="radio"]:not(:checked) + label,
+button,
+a {
+  background-color: rgb(43, 5, 87);
 }
 
-.radio-div input[type="radio"]:not(:checked) + label,
-.radio-div input[type="checkbox"]:not(:checked) + label,
-button {
-  background-color: aliceblue;
+.radio-div input[type="radio"]:checked + label,
+.radio-div input[type="radio"]:not(:checked) + label:hover,
+button:active,
+a:hover,
+a:active {
+  background-color: rgb(123, 0, 255);
+}
+a {
+  border-radius: var(--radius);
+  box-shadow: inset 0 0 15px rgb(255, 255, 255);
 }

@@ -7,13 +7,10 @@
  */
 
 :root {
-  --qwik-dark-blue: #006ce9;
-  --qwik-light-blue: #18b6f6;
-  --qwik-light-purple: #ac7ff4;
-  --qwik-dark-purple: #713fc2;
-  --qwik-dirty-black: #1d2033;
-  --qwik-dark-background: #151934;
-  --qwik-dark-text: #ffffff;
+  --max-padding: 1rem;
+}
+* {
+  transition: all 0.5s;
 }
 
 /* THIS FILE IS JUST FOR EXAMPLES, DELETE IT IF YOU DON'T NEED IT */
@@ -22,7 +19,7 @@
 
 body {
   background-color: #1c1c1c;
-  background: url("/background.jpeg") no-repeat center center fixed; 
+  background: url("/background.jpeg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -30,32 +27,59 @@ body {
   color: white;
   padding: 0;
   margin: 0;
+  padding: var(--max-padding);
+}
+.logo {
+  font-size: 3rem;
+  font-weight: 900;
+  font-family: sans-serif;
+
+  padding: var(--max-padding);
+
+  background-color: rgb(3, 2, 0);
+
+  background: linear-gradient(90deg, #ed6060, #b260ed, #607eed, #60d1ed);
+}
+@media (max-width: 300px) {
+  :root {
+    --max-padding: 0.5rem;
+  }
+  .logo,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  button,
+  a,
+  label {
+    word-break: break-all;
+  }
 }
 
 a {
   text-decoration: none;
   color: #ffffff;
-  padding: 1rem;
+  padding: var(--max-padding);
   background-color: rgba(0, 0, 255, 0.115);
   transition: background-color 0.5s;
 }
-a:hover {
-  background-color: rgba(0, 0, 255, 0.653);
-}
-main {
-  padding-top: 10rem;
-}
+
 ul {
   font-family: monospace;
   display: flex;
+  padding: 0;
   flex-wrap: wrap;
   list-style: none;
   gap: 0.1rem;
 }
 
 img {
-  inline-size: 95%;
-  block-size: 95%;
+  inline-size: 100%;
+  block-size: 100%;
   display: inline-block;
 }
 h1,
@@ -74,10 +98,11 @@ button {
   border: none;
 }
 button,
+label,
 span,
 p,
 a {
-  font-size: 0.8rem;
+  font-size: 1.1rem;
 
   font-family: monospace, sans-serif;
 }
