@@ -1,0 +1,31 @@
+{
+  "name": "Colorify",
+  "short_name": "Colorify",
+  "icons": [
+    {
+      "src": "/icons/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+
+  "start_url": ".",
+
+  "description": "Colorify - Quantized your images and create beautiful outputs"
+}
