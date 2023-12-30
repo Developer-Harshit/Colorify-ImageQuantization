@@ -17,20 +17,31 @@
 
 /* SHELL ---------------------------------------- */
 
+html,
 body {
+  min-height: 100vh;
+}
+html {
   background-color: #1c1c1c;
   background: url("/background.jpeg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  position: absolute;
+}
+body {
   color: white;
   padding: 0;
   margin: 0;
-  padding: var(--max-padding);
+  /* padding: var(--max-padding); */
+}
+main {
+  padding: 1rem;
 }
 .logo {
   font-size: 3rem;
+  margin: 0;
   font-weight: 900;
   font-family: sans-serif;
 
