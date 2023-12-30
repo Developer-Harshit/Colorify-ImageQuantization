@@ -21,8 +21,8 @@
 /* SHELL ---------------------------------------- */
 
 body {
-  background-color: #1d2033;
-  background: url("/background.jpg") no-repeat center center fixed; 
+  background-color: #1c1c1c;
+  background: url("/background.jpeg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
